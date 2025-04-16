@@ -1,0 +1,16 @@
+{
+  "canisters": {
+    "secure_tchat_backend": {
+      "main": "src/secure_tchat_backend/main.mo",
+      "type": "motoko"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
