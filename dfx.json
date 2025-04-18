@@ -1,8 +1,18 @@
 {
   "canisters": {
-    "secure_tchat_backend": {
-      "main": "src/secure_tchat_backend/main.mo",
+    "secure-tchat-backend": {
+      "main": "src/secure-tchat-backend/main.mo",
       "type": "motoko"
+    },
+    "secure-tchat-frontend": {
+      "dependencies": [
+        "secure-tchat-backend"
+      ],
+      "source": [
+        "src/secure-tchat-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "secure-tchat-frontend"
     }
   },
   "defaults": {
