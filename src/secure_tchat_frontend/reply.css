@@ -1,0 +1,163 @@
+/* Reply feature styling */
+
+/* Reply button and actions */
+.message-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.message-actions {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.message:hover .message-actions {
+    opacity: 1;
+}
+
+.reply-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+
+.reply-btn:hover {
+    background-color: rgba(151, 107, 239, 0.1);
+    color: var(--primary-color);
+}
+
+/* Reply quote in messages */
+.reply-to {
+    display: flex;
+    margin-bottom: 6px;
+    padding: 8px 12px;
+    background-color: var(--reply-bg, #f3f0ff);
+    border-left: 4px solid var(--primary-color, #976bef);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(151, 107, 239, 0.07);
+}
+
+:root {
+    --reply-bg: #f3f0ff;
+}
+[data-theme="dark"] {
+    --reply-bg: #251b35;
+}
+
+
+.reply-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--primary-color);
+}
+
+.reply-content {
+    flex: 1;
+    margin-left: 8px;
+}
+
+.reply-sender {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2px;
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
+}
+
+.reply-text {
+    font-size: 0.97rem;
+    color: var(--text-color, #222);
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Reply composer UI */
+.reply-composer {
+    background-color: var(--reply-bg, #f3f0ff);
+    border-left: 4px solid var(--primary-color, #976bef);
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    animation: slideDown 0.2s ease;
+    box-shadow: 0 1px 3px rgba(151, 107, 239, 0.10);
+}
+
+.reply-composer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reply-composer-info {
+    flex: 1;
+}
+
+.reply-to-label {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.reply-to-preview {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cancel-reply-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.cancel-reply-btn:hover {
+    background-color: rgba(151, 107, 239, 0.1);
+    color: var(--primary-color);
+}
+
+/* Highlight effect for messages */
+@keyframes highlight {
+    0% { background-color: rgba(151, 107, 239, 0.2); }
+    100% { background-color: transparent; }
+}
+
+.highlight-message {
+    animation: highlight 2s ease;
+}
+
+/* Animation for reply composer */
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
